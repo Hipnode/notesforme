@@ -1,0 +1,90 @@
+.card{
+	padding: 0;
+	min-width: 200px;
+	/*min-height: 200px;*/
+	background-color: #ccc;
+	border-radius: 10px;
+	
+	float: left;
+	margin: 20px;
+	color: white;
+
+}
+
+.card-options{
+	opacity: 0;
+	float: right;
+	transition: .5s;
+
+}
+
+.card-content{
+	padding: 35px;
+	font-size: 30px;
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+}
+.card-options div{
+	
+	transition: .2s;
+	cursor: pointer;
+	float: right;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	border-radius: 25px;
+	margin-top: -12.5px;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	font-weight: bold;
+
+}
+
+.card-options div:nth-child(3){
+	background-color: #f1c40f;
+	border: 4px solid #f39c12;
+}
+
+.card-options div:nth-child(4){
+	background-color: #2ecc71;
+	border: 4px solid #27ae60;
+}
+
+.card-options div:nth-child(5){
+	background-color: #e74c3c;
+	border: 4px solid #c0392b;
+}
+
+.btnRemove,
+.btnEdit{
+	background-color: #555;
+	border: 4px solid #888;
+
+}
+
+.card-options.visible{
+	opacity: 1;
+}
+
+.card-options.visible div:hover{
+	transform: scale(1.2);
+}
+
+/*
+.card .edit{
+	display: none;
+	width: 100%;
+
+}
+
+.card .edit textarea{
+	width: 100%;
+}
+
+.card .edit.visible{
+	display: block;
+
+}
+
+*/

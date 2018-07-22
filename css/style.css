@@ -1,0 +1,87 @@
+*{
+	padding: 0;
+	margin: 0;
+
+}
+
+.container{
+	width: 80%;
+	margin: 0 auto;
+}
+
+header{
+	background-color: #ccc;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+nav{
+	height: 60px;
+	background-color: #34495e;
+	line-height: 60px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+nav h1{
+	font-family: 'Merienda', cursive;
+	color: #f1c40f;
+	user-select: none;
+	
+}
+
+.addNoteArea{
+	padding: 20px;
+
+}
+
+.addNote{
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
+}
+
+.addNote textarea{
+	padding: 10px;
+	width: 100%;
+	height: 60px;
+	border: 2px solid #74b9ff;
+	border-radius: 10px;
+}
+
+.btnAdd{
+	padding: 10px;
+	border: none;
+	background-color: #34495e;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+.btnAdd{
+	background-color: #2c3e50;
+}
+
+/*
+.card{
+	padding: 40px;
+	float: left;
+	margin: 20px;
+	color: white;
+}
+
+*/
+@media only screen and ( max-width: 768px ){
+	.addNote{
+		width: 100%;
+	}
+
+	.card{
+		width: 100%;
+		
+	}
+	
+	.nav{
+		text-align: center;
+	}
+}
