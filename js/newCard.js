@@ -1,5 +1,6 @@
-const tasksArea  = document.querySelector('.tasksArea');
-const btnAddTask = document.querySelector('.btnAdd');
+const 
+     tasksArea  = document.querySelector('.tasksArea'),
+     btnAddTask = document.querySelector('.btnAdd');
 
 
 btnAddTask.onclick = function(){
@@ -20,7 +21,8 @@ btnAddTask.onclick = function(){
 	"</div>";
 	
 	
-	tasksArea.insertAdjacentHTML('beforeend', card);	
-	loadCardFunctions();
+	tasksArea.insertAdjacentHTML('beforeend', card);
 
+	const lastCard = tasksArea.lastChild;
+	addFunctionsToCard(lastCard);
 }
