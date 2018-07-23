@@ -1,38 +1,61 @@
-function loadCardFunctions(){
+function addFunctionsToCard(card){
+	
+	const card_opts = card.firstChild;
 
-	const cards = document.querySelectorAll('.card');
+	card.onmouseover = function(){
+		card_opts.classList.add('visible');
+	}
 
-	for( i = 0; i < cards.length; i++){
-		const card_opts = cards[i].querySelector('.card-options');
+	card.onmouseout = function(){
+		card_opts.classList.remove('visible');
+	}
 
-		cards[i].onmouseover = function(){
-			card_opts.classList.add('visible');
+	card_opts.onclick = function(event){
 
-		}
+		const element = event.target;
 
-		cards[i].onmouseout  = function(){
-			card_opts.classList.remove('visible');
-		}
+		if( element.classList.contains('color') ){
 
-		card_opts.onclick = function(event){
+			const color = element.getAttribute('data-color');
+			card
+			.style
+			.background = color;
+
+		}else if( element.classList.contains('btnRemove'))
+			card.remove();
+		else{
 			
-			const element = event.target;
-			if( element.classList.contains('color') ){
-				const color = element.getAttribute('data-color');
-				element
-				.parentNode
-				.parentNode
-				.style
-				.background = color;
-			}else if( element.classList.contains('btnRemove')){
-				element
-				.parentNode
-				.parentNode
-				.remove();
+			const cardContentArea = card.querySelector('.card-content'),
+			      cardContent = card.querySelector('P'),
+			      txtAreaEdit = document.createElement("textarea"),
+			      btnEdit = document.createElement("INPUT");
 
-			}else{
-				alert('Editando...');
+			txtAreaEdit.type = "textarea";
+			txtAreaEdit.className = "txtAreaEditContent";
+			txtAreaEdit.value = cardContent.textContent;
+
+			btnEdit.type = "button";
+			btnEdit.className = "btnEditContent";
+			btnEdit.value = "Edit";
+
+			cardContent.remove();
+
+			cardContentArea.insertAdjacentElement('beforeend', txtAreaEdit);
+			cardContentArea.insertAdjacentElement('beforeend', btnEdit);
+
+			btnEdit.onclick = function(){
+				const newP = document.createElement("P");
+
+				newP.textContent = txtAreaEdit.value;
+
+				txtAreaEdit.remove();
+				btnEdit.remove();
+
+				cardContentArea.appendChild(newP);
+
 			}
 		}
 	}
+
 }
+
